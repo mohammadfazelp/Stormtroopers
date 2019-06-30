@@ -5,7 +5,6 @@ import com.faz.domain.model.TripModel
 import io.reactivex.Single
 import com.faz.domain.executor.PostExecutionThread
 import com.faz.domain.executor.ThreadExecutor
-import javax.inject.Inject
 
 //open class GetTripById @Inject constructor(
 //    private val id:Long,

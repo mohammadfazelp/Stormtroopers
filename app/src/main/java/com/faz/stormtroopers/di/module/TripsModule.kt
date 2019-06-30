@@ -2,40 +2,32 @@ package com.faz.stormtroopers.di.module
 
 import android.app.Application
 import android.content.Context
+import com.faz.data.cache.IPreferencesHelper
 import com.faz.data.cache.PreferencesHelper
 import com.faz.data.cache.TripCache
-import com.faz.data.datastore.CacheDataStore
 import com.faz.data.datastore.DataStoreFactory
-import com.faz.data.datastore.RemoteDataStore
 import com.faz.data.executor.JobExecutor
-import com.faz.data.mapper.Mapper
 import com.faz.data.mapper.TripMapperData
 import com.faz.data.remote.api.TripApi
 import com.faz.data.remote.api.TripApiFactory
 import com.faz.data.remote.api.TripRemote
-import com.faz.data.remote.model.TripEntity
 import com.faz.data.repository.ICache
 import com.faz.data.repository.IRemote
 import com.faz.data.repository.TripRepository
 import com.faz.domain.IRepository
 import com.faz.domain.executor.PostExecutionThread
 import com.faz.domain.executor.ThreadExecutor
-import com.faz.domain.model.TripModel
 import com.faz.domain.usecase.GetTripsUseCase
 import com.faz.domain.usecase.IGetTripsUseCase
 import com.faz.stormtroopers.BuildConfig
-import dagger.Module
-import dagger.Provides
 import com.faz.stormtroopers.UiThread
 import com.faz.stormtroopers.di.qualifier.ApplicationContext
-import javax.inject.Named
+import dagger.Module
+import dagger.Provides
 import javax.inject.Singleton
 
-/**
- * Module used to provide dependencies at an activity-level.
- */
 @Module
- class TripsModule {
+class TripsModule {
 
     @Provides
     fun provideGetTripsUseCase(r: IRepository, t: ThreadExecutor, p: PostExecutionThread)
@@ -73,9 +65,15 @@ import javax.inject.Singleton
         return TripRemote(api)
     }
 
+
+    @Provides
+    fun provideContext(application: Application): Context {
+        return application
+    }
+
     @Provides
     @Singleton
-    fun providePreferencesHelper(@ApplicationContext context: Context): PreferencesHelper {
+    fun providePreferencesHelper(context: Context): IPreferencesHelper {
         return PreferencesHelper(context)
     }
 

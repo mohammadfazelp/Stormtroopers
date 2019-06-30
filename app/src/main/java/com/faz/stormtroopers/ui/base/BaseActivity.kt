@@ -1,8 +1,7 @@
 package com.faz.stormtroopers.ui.base
 
-import android.view.View
 import androidx.navigation.NavController
-import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
 import dagger.android.support.DaggerAppCompatActivity
 
 abstract class BaseActivity : DaggerAppCompatActivity() {
@@ -13,5 +12,5 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
 
     override fun onSupportNavigateUp() = navController.navigateUp()
 
-    abstract fun getNavControllerId(): View
+    abstract fun getNavControllerId(): Int
 }

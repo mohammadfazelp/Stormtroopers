@@ -10,7 +10,7 @@ import javax.inject.Singleton
  * General Preferences Helper class, used for storing preference values using the Preference API
  */
 @Singleton
-class PreferencesHelper @Inject constructor(context: Context) {
+class PreferencesHelper @Inject constructor(context: Context) : IPreferencesHelper{
 
     companion object {
         private const val PREF_TRIP_PACKAGE_NAME = "com.faz.data.cache.preferences"

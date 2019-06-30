@@ -1,24 +1,29 @@
 apply plugin: 'kotlin'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
-
-configurations.all {
-    resolutionStrategy {
-        force "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    }
-}
-
+targetCompatibility = 1.8
+sourceCompatibility = 1.8
 
 dependencies {
+    def domainDependencies = rootProject.ext.domainDependencies
+    def domainTestDependencies = rootProject.ext.domainTestDependencies
 
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
-    compile 'javax.annotation:jsr250-api:1.0'
-    compile 'javax.inject:javax.inject:1'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.40'
+    // other
+    implementation domainDependencies.kotlin
+    // reactive
+    implementation domainDependencies.rxAndroid
+    implementation domainDependencies.rxJava
+    // android architecture component
+    implementation domainDependencies.pagingRuntime
+    implementation domainDependencies.pagingRxJava
+    // test
+    testImplementation domainTestDependencies.junit
+    testImplementation domainTestDependencies.mockito
 
-    // Test stuff
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:2.21.0'
-    testImplementation 'com.nhaarman:mockito-kotlin:1.5.0'
+    implementation domainTestDependencies.javaxInject
+
+}
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
 }

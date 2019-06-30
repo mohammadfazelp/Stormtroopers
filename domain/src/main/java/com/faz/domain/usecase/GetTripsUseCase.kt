@@ -32,7 +32,7 @@ open class GetTripsUseCase @Inject constructor(
     private val postExecutionThread: PostExecutionThread
 ) : IGetTripsUseCase {
 
-    private fun buildUseCaseObservable(): Single<List<TripModel.Trip>> {
+    override fun buildUseCaseObservable(): Single<List<TripModel.Trip>> {
         return repository.getTrips()
     }
 

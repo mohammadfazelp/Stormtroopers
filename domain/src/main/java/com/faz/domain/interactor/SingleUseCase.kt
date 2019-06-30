@@ -7,13 +7,12 @@ import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import com.faz.domain.executor.PostExecutionThread
 import com.faz.domain.executor.ThreadExecutor
-import javax.inject.Inject
 
 
 /**
  * Abstract class for a UseCase that returns an instance of a [Single].
  */
-abstract class SingleUseCase<T, in Params> @Inject constructor(
+abstract class SingleUseCase<T, in Params> /*@Inject*/ constructor(
     private val threadExecutor: ThreadExecutor,
     private val postExecutionThread: PostExecutionThread
 ) {
