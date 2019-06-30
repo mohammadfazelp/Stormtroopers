@@ -71,6 +71,7 @@ dependencies {
     testImplementation dataTestDependencies.mockito
     androidTestImplementation dataTestDependencies.testRunner
     testImplementation dataTestDependencies.room
+    testImplementation appTestDependencies.mockitoKotlin
 
     implementation project(':domain')
 }

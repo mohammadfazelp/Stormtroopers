@@ -1,9 +1,9 @@
 package com.faz.stormtroopers.test
 
 import com.faz.domain.model.TripModel
-import com.faz.stormtroopers.test.DataFactory.Factory.randomInt
-import com.faz.stormtroopers.test.DataFactory.Factory.randomLong
-import com.faz.stormtroopers.test.DataFactory.Factory.randomUuid
+import com.faz.data.test.factory.DataFactory.Factory.randomInt
+import com.faz.data.test.factory.DataFactory.Factory.randomLong
+import com.faz.data.test.factory.DataFactory.Factory.randomUuid
 
 class TripFactory {
 
