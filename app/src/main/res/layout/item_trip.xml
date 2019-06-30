@@ -45,8 +45,8 @@
             android:layout_height="10dp"
             app:srcCompat="@drawable/ic_arrow"
             app:layout_constraintStart_toEndOf="@+id/textViewPickUp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/textViewPickUp"
             app:layout_constraintTop_toTopOf="@+id/textViewPickUp"
             tools:ignore="VectorDrawableCompat"/>
