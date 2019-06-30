@@ -10,11 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.faz.presentation.mapper.TripMapper
 import com.faz.presentation.model.TripView
 import com.faz.presentation.viewmodel.TripsViewModel
-import com.faz.stormtroopers.R
 import com.faz.stormtroopers.common.extension.observe
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_trips.*
 import javax.inject.Inject
+import androidx.recyclerview.widget.DividerItemDecoration
+import com.faz.stormtroopers.R
 
 class TripsFragment : DaggerFragment() {
 
@@ -61,6 +62,12 @@ class TripsFragment : DaggerFragment() {
     private fun setupRecycler() {
         rv_trips.layoutManager = LinearLayoutManager(activity)
         rv_trips.adapter = adapter
+        val dividerItemDecoration = DividerItemDecoration(
+            rv_trips.context,
+            (rv_trips.layoutManager as LinearLayoutManager).orientation
+        )
+        context?.resources?.getDrawable(R.drawable.divider)?.let { dividerItemDecoration.setDrawable(it) }
+        rv_trips.addItemDecoration(dividerItemDecoration)
     }
 
     private fun initView() {
