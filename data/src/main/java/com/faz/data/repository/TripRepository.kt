@@ -4,6 +4,7 @@ import com.faz.data.mapper.TripMapperData
 import com.faz.data.remote.model.TripEntity
 import com.faz.data.datastore.DataStoreFactory
 import com.faz.data.datastore.RemoteDataStore
+import com.faz.data.remote.api.TripApi
 import com.faz.domain.IRepository
 import com.faz.domain.model.TripModel
 import io.reactivex.Completable
@@ -30,13 +31,13 @@ class TripRepository @Inject constructor(
                 }
             }
             .map { list ->
-                list.map { listItem ->
+                list.trips.map { listItem ->
                     mapper.mapFromEntity(listItem)
                 }
             }
     }
 
-    private fun saveTripEntities(trips: List<TripEntity.Trip>): Completable {
+    private fun saveTripEntities(trips: TripApi.TripListResponse): Completable {
         return factory.retrieveCacheDataStore().saveTrips(trips)
     }
 

@@ -1,5 +1,6 @@
 package com.faz.data.datastore
 
+import com.faz.data.remote.api.TripApi
 import com.faz.data.remote.model.TripEntity
 import com.faz.data.repository.IDataStore
 import com.faz.data.repository.IRemote
@@ -18,7 +19,7 @@ open class RemoteDataStore @Inject constructor(private val remote: IRemote) :
         return remote.getTripById(id)
     }
 
-    override fun saveTrips(trips: List<TripEntity.Trip>): Completable {
+    override fun saveTrips(trips: TripApi.TripListResponse): Completable {
         throw UnsupportedOperationException()
     }
 
@@ -29,7 +30,7 @@ open class RemoteDataStore @Inject constructor(private val remote: IRemote) :
     /**
      * Retrieve a list of [TripEntity] instances from the API
      */
-    override fun getTrips(): Single<List<TripEntity.Trip>> {
+    override fun getTrips(): Single<TripApi.TripListResponse> {
         return remote.getTrips()
     }
 }

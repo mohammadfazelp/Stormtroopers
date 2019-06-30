@@ -15,7 +15,7 @@ class TripRemote @Inject constructor(private val api: TripApi): IRemote{
     /**
      * Retrieve a list of [TripEntity.Trip] instances from the [TripApi].
      */
-    override fun getTrips(): Single<List<TripEntity.Trip>> {
+    override fun getTrips(): Single<TripApi.TripListResponse> {
         return api.getTrips()
     }
 

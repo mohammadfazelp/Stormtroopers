@@ -1,5 +1,6 @@
 package com.faz.data.datastore
 
+import com.faz.data.remote.api.TripApi
 import com.faz.data.remote.model.TripEntity
 import com.faz.data.repository.ICache
 import com.faz.data.repository.IDataStore
@@ -13,7 +14,7 @@ open class CacheDataStore @Inject constructor(private val cache: ICache) :
     /**
      * Save a given [List] of [TripEntity.Trip] instances to the cache
      */
-    override fun saveTrips(trips: List<TripEntity.Trip>): Completable {
+    override fun saveTrips(trips: TripApi.TripListResponse): Completable {
         return cache.saveTrips(trips)
             .doOnComplete {
                 cache.setLastCacheTime(System.currentTimeMillis())
@@ -30,7 +31,7 @@ open class CacheDataStore @Inject constructor(private val cache: ICache) :
     /**
      * Retrieve a list of [TripEntity.Trip] instance from the cache
      */
-    override fun getTrips(): Single<List<TripEntity.Trip>> {
+    override fun getTrips(): Single<TripApi.TripListResponse> {
         return cache.getTrips()
     }
 

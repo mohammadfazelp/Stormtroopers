@@ -1,5 +1,6 @@
 package com.faz.data.test.factory
 
+import com.faz.data.remote.api.TripApi
 import com.faz.data.remote.model.TripEntity
 import com.faz.domain.model.TripModel
 import com.faz.data.test.factory.DataFactory.Factory.randomInt
@@ -66,11 +67,27 @@ class TripFactory {
         }
 
         fun makeTripModelList(count: Int): List<TripModel.Trip> {
-            val tripModels= mutableListOf<TripModel.Trip>()
+            val tripModels = mutableListOf<TripModel.Trip>()
             repeat(count) {
                 tripModels.add(makeTripModel())
             }
             return tripModels
+        }
+
+
+        //api package
+        fun makeTripResponse(): TripApi.TripListResponse {
+            val tripResponse = TripApi.TripListResponse()
+            tripResponse.trips = makeTripApiModelList(5)
+            return tripResponse
+        }
+
+        fun makeTripApiModelList(count: Int): List<TripEntity.Trip> {
+            val tripEntities = mutableListOf<TripEntity.Trip>()
+            repeat(count) {
+                tripEntities.add(makeTripEntity())
+            }
+            return tripEntities
         }
     }
 }

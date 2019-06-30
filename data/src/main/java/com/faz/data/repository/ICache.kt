@@ -1,5 +1,6 @@
 package com.faz.data.repository
 
+import com.faz.data.remote.api.TripApi
 import com.faz.data.remote.model.TripEntity
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -13,7 +14,7 @@ interface ICache{
     /**
      * Retrieve a list of Trip, from the cache
      */
-    fun getTrips(): Single<List<TripEntity.Trip>>
+    fun getTrips(): Single<TripApi.TripListResponse>
 
     /**
      * Retrieve a Trip, from the cache
@@ -23,7 +24,7 @@ interface ICache{
     /**
      * Save a given list of Trip to the cache
      */
-    fun saveTrips(trips: List<TripEntity.Trip>): Completable
+    fun saveTrips(trips: TripApi.TripListResponse): Completable
 
 //    /**
 //     * Save a given Trip to the cache

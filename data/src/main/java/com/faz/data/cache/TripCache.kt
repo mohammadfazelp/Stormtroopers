@@ -1,5 +1,6 @@
 package com.faz.data.cache
 
+import com.faz.data.remote.api.TripApi
 import com.faz.data.remote.model.TripEntity
 import com.faz.data.repository.ICache
 import io.reactivex.Completable
@@ -9,7 +10,7 @@ import javax.inject.Inject
 class TripCache @Inject constructor(private val preferencesHelper: PreferencesHelper)
     : ICache {
 
-    override fun getTrips(): Single<List<TripEntity.Trip>> {
+    override fun getTrips(): Single<TripApi.TripListResponse> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -17,7 +18,7 @@ class TripCache @Inject constructor(private val preferencesHelper: PreferencesHe
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun saveTrips(trips: List<TripEntity.Trip>): Completable {
+    override fun saveTrips(trips: TripApi.TripListResponse): Completable {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

@@ -1,5 +1,6 @@
 package com.faz.data.repository
 
+import com.faz.data.remote.api.TripApi
 import com.faz.data.remote.model.TripEntity
 import io.reactivex.Single
 
@@ -12,7 +13,7 @@ interface IRemote {
     /**
      * Retrieve a list of Trips, from network
      */
-    fun getTrips(): Single<List<TripEntity.Trip>>
+    fun getTrips(): Single<TripApi.TripListResponse>
 
     /**
      * Retrieve a Trip, from network
