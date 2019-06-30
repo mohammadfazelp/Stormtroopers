@@ -108,12 +108,13 @@ ext {
             javaxInject  : "javax.inject:javax.inject:$javaxInjectVersion"
     ]
     domainTestDependencies = [
-            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
-            junit      : "junit:junit:$junitVersion",
-            mockito    : "org.mockito:mockito-core:$mockitoVersion",
-            testRunner : "androidx.test:runner:$supportTest",
-            testRules  : "androidx.test:runner:$supportTest",
-            javaxInject: "javax.inject:javax.inject:$javaxInjectVersion"
+            kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            junit        : "junit:junit:$junitVersion",
+            mockito      : "org.mockito:mockito-core:$mockitoVersion",
+            testRunner   : "androidx.test:runner:$supportTest",
+            testRules    : "androidx.test:runner:$supportTest",
+            javaxInject  : "javax.inject:javax.inject:$javaxInjectVersion",
+            mockitoKotlin: "com.nhaarman:mockito-kotlin:${mockitoKotlinV}",
     ]
     // Data
     dataDependencies = [
