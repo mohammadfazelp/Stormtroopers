@@ -94,12 +94,14 @@ dependencies {
     implementation appDependencies.lifecycleExtensions
     implementation appDependencies.lifecycleCommon
     implementation appDependencies.pagingRuntime
+
     // test
     testImplementation appTestDependencies.junit
     androidTestImplementation appTestDependencies.testRunner
     androidTestImplementation appTestDependencies.testRules
     androidTestImplementation appTestDependencies.espressoCore
     androidTestImplementation appTestDependencies.espressoContrib
+    androidTestImplementation appTestDependencies.espressoIntents
     implementation appTestDependencies.espressoIdlingResource
     androidTestImplementation appTestDependencies.supportAnnotations
     testImplementation appTestDependencies.robolectric
@@ -109,6 +111,7 @@ dependencies {
     testImplementation appTestDependencies.mockitoKotlin
     testImplementation appTestDependencies.powermockModuleJunit4
     testImplementation appTestDependencies.powermockApiMockito
+    testImplementation appTestDependencies.kotlinJUnit
 
     implementation project(':presentation')
     implementation project(':data')

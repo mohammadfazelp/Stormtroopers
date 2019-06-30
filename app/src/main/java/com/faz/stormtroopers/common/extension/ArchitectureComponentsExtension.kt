@@ -1,4 +1,4 @@
-package com.faz.stormtroopers.extension
+package com.faz.stormtroopers.common.extension
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData

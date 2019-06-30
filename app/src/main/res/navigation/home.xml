@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/tripsFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/tripsFragment"
         android:name="com.faz.stormtroopers.ui.trips.TripsFragment"
         tools:layout="@layout/fragment_trips">
 

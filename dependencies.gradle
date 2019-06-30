@@ -35,6 +35,9 @@ ext {
     mockitoCoreVersion = '2.21.0'
     navigationVersion = '1.0.0-alpha06'
     paginateVersion = '0.5.1'
+    assertJVersion = '3.8.0'
+    mockitoKotlinV = '1.5.0'
+
     // App
     appDependencies = [
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
@@ -75,19 +78,23 @@ ext {
     ]
     appTestDependencies = [
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            kotlinJUnit           : "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}",
+            assertj               : "org.assertj:assertj-core:${assertJVersion}",
             junit                 : "junit:junit:$junitVersion",
             mockito               : "org.mockito:mockito-core:$mockitoVersion",
+            mockitoKotlin         : "com.nhaarman:mockito-kotlin:${mockitoKotlinV}",
             room                  : "androidx.room:room-testing:$roomVersion",
             testRunner            : "androidx.test:runner:$supportTest",
             testRules             : "androidx.test:runner:$supportTest",
             espressoCore          : "androidx.test.espresso:espresso-core:$espressoVersion",
             espressoContrib       : ("androidx.test.espresso:espresso-contrib:$espressoVersion"),
             espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:$espressoVersion",
+            espressoIntents       : "com.android.support.test.espresso:espresso-intents:${espressoVersion}",
             supportAnnotations    : "androidx.annotation:annotation:$supportVersion",
             robolectric           : "org.robolectric:robolectric:$robolectricVersion",
             mockitoCore           : "org.mockito:mockito-core:$mockitoCoreVersion",
             daggerCompiler        : "com.google.dagger:dagger-compiler:$daggerVersion",
-            mockitoKotlin         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
+//            mockitoKotlin         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
             powermockModuleJunit4 : "org.powermock:powermock-module-junit4:$powermockVersion",
             powermockApiMockito   : "org.powermock:powermock-api-mockito:$powermockVersion"
     ]

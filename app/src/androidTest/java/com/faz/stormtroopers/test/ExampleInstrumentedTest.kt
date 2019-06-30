@@ -1,4 +1,4 @@
-package com.faz.stormtroopers
+package com.faz.stormtroopers.test
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

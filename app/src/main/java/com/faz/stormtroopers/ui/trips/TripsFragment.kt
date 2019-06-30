@@ -4,20 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.faz.presentation.model.TripView
-import com.faz.stormtroopers.R
 import com.faz.presentation.viewmodel.TripsViewModel
-import com.faz.stormtroopers.extension.observe
-import dagger.android.support.AndroidSupportInjection
+import com.faz.stormtroopers.R
+import com.faz.stormtroopers.common.extension.observe
 import dagger.android.support.DaggerFragment
-import kotlinx.android.synthetic.main.fragment_trips.*
 import javax.inject.Inject
-import javax.inject.Named
 
 class TripsFragment : DaggerFragment() {
 

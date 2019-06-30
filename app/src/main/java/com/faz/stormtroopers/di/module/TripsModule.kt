@@ -30,19 +30,13 @@ import javax.inject.Singleton
 class TripsModule {
 
     @Provides
-    fun provideGetTripsUseCase(r: IRepository, t: ThreadExecutor, p: PostExecutionThread)
-            : IGetTripsUseCase = GetTripsUseCase(r, t, p)
-
-//    @Provides
-//    fun provideTripMapper(): Mapper<TripEntity.Trip, TripModel.Trip> = TripMapperData()
+    fun provideContext(application: Application): Context {
+        return application
+    }
 
     @Provides
-    fun provideTripRepository(
-        factory: DataStoreFactory,
-        mapper: TripMapperData
-    ): IRepository {
-        return TripRepository(factory, mapper)
-    }
+    fun provideGetTripsUseCase(r: IRepository, t: ThreadExecutor, p: PostExecutionThread)
+            : IGetTripsUseCase = GetTripsUseCase(r, t, p)
 
     @Provides
     fun provideThreadExecutor(jobExecutor: JobExecutor): ThreadExecutor {
@@ -55,22 +49,28 @@ class TripsModule {
     }
 
     @Provides
+    fun provideTripRepository(
+        factory: DataStoreFactory,
+        mapper: TripMapperData
+    ): IRepository {
+        return TripRepository(factory, mapper)
+    }
+
+    /**-----------------Api-------------------**/
+    @Provides
     @Singleton
     fun provideTripApi(): TripApi {
         return TripApiFactory.makeTripApi(BuildConfig.DEBUG)
     }
 
+
     @Provides
     fun provideTripRemote(api: TripApi): IRemote {
         return TripRemote(api)
     }
+    /**-----------------Api-------------------**/
 
-
-    @Provides
-    fun provideContext(application: Application): Context {
-        return application
-    }
-
+    /**-----------------Local-------------------**/
     @Provides
     @Singleton
     fun providePreferencesHelper(context: Context): IPreferencesHelper {
@@ -82,4 +82,6 @@ class TripsModule {
     fun provideTripCache(helper: PreferencesHelper): ICache {
         return TripCache(helper)
     }
+    /**-----------------Local-------------------**/
+
 }

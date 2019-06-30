@@ -1,4 +1,4 @@
-package com.faz.stormtroopers.extension
+package com.faz.stormtroopers.common.extension
 
 import io.reactivex.*
 import io.reactivex.android.schedulers.AndroidSchedulers

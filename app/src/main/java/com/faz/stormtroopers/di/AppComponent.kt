@@ -7,7 +7,6 @@ import com.faz.stormtroopers.di.qualifier.PerApplication
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
-import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
 @PerApplication
@@ -18,7 +17,7 @@ import javax.inject.Singleton
         ActivityModule::class,
         TripsModule::class,
         AppModule::class,
-        TripsFragmentModule::class,
+        FragmentModule::class,
         ViewModelModule::class]
 )
 interface AppComponent {
@@ -33,16 +32,3 @@ interface AppComponent {
 
     fun inject(app: App)
 }
-
-//@Singleton
-//@Component(modules = [
-//    AndroidSupportInjectionModule::class,
-//    ViewModelModule::class,
-//    TripsModule::class,
-//    AppModule::class,
-//    ActivityModule::class
-//])
-//interface AppComponent : AndroidInjector<App> {
-//    @Component.Builder
-//    abstract class Builder : AndroidInjector.Builder<App>()
-//}

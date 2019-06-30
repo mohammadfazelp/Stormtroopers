@@ -1,4 +1,4 @@
-package com.faz.stormtroopers
+package com.faz.stormtroopers.test
 
 import org.junit.Test
 

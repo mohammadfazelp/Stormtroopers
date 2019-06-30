@@ -1,4 +1,4 @@
-package com.faz.stormtroopers.extension
+package com.faz.stormtroopers.common.extension
 
 import android.os.Bundle
 import androidx.annotation.IdRes
