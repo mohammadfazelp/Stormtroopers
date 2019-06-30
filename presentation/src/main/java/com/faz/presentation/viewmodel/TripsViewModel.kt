@@ -53,7 +53,6 @@ class TripsViewModel @Inject constructor(
         if (trips.isNotEmpty()) {
             tripsMutableLiveData.postValue(trips.map { tripMapper.mapToView(it) })
         } else {
-            //todo : To handle it with ResultState class!
             networkErrorMutableLiveData.postValue("Network Error!")
         }
     }

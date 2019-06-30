@@ -23,23 +23,23 @@ class TripRepository @Inject constructor(
     override fun getTrips(): Single<List<TripModel.Trip>> {
         val dataStore = factory.retrieveDataStore()
         return dataStore.getTrips()
-            .flatMap {
-                if (dataStore is RemoteDataStore) {
-                    saveTripEntities(it).toSingle { it }
-                } else {
-                    Single.just(it)
-                }
-            }
+//            .flatMap {
+//                if (dataStore is RemoteDataStore) {
+//                    saveTripEntities(it).toSingle { it }
+//                } else {
+//                    Single.just(it)
+//                }
+//            }
             .map { list ->
-                list.trips.map { listItem ->
+                list.map { listItem ->
                     mapper.mapFromEntity(listItem)
                 }
             }
     }
 
-    private fun saveTripEntities(trips: TripApi.TripListResponse): Completable {
-        return factory.retrieveCacheDataStore().saveTrips(trips)
-    }
+//    private fun saveTripEntities(trips: List<TripEntity.Trip>): Completable {
+//        return factory.retrieveCacheDataStore().saveTrips(trips)
+//    }
 
     override fun getTripById(id: Long): Single<TripModel.Trip> {
 

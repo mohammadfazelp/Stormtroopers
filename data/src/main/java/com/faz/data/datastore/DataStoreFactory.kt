@@ -8,8 +8,8 @@ import javax.inject.Inject
  * Create an instance of a TripDataStore
  */
 open class DataStoreFactory @Inject constructor(
-    private val cache: ICache,
-    private val cacheDataStore:  CacheDataStore,
+//    private val cache: ICache,
+/*    private val cacheDataStore:  CacheDataStore,*/
     private val remoteDataStore:  RemoteDataStore) {
 
     /**
@@ -17,18 +17,18 @@ open class DataStoreFactory @Inject constructor(
      * content in the cache and the cache has not expired
      */
     open fun retrieveDataStore():  IDataStore {
-        if (cache.isCached() && !cache.isExpired()) {
-            return retrieveCacheDataStore()
-        }
+//        if (cache.isCached() && !cache.isExpired()) {
+//            return retrieveCacheDataStore()
+//        }
         return retrieveRemoteDataStore()
     }
 
     /**
      * Return an instance of the Remote Data Store
      */
-    open fun retrieveCacheDataStore(): IDataStore {
-        return cacheDataStore
-    }
+//    open fun retrieveCacheDataStore(): IDataStore {
+//        return cacheDataStore
+//    }
 
     /**
      * Return an instance of the Cache Data Store

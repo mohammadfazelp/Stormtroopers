@@ -77,11 +77,11 @@ class TripsModule {
         return PreferencesHelper(context)
     }
 
-    @Provides
-    @Singleton
-    fun provideTripCache(helper: PreferencesHelper): ICache {
-        return TripCache(helper)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideTripCache(helper: PreferencesHelper): ICache {
+//        return TripCache(helper)
+//    }
     /**-----------------Local-------------------**/
 
 }

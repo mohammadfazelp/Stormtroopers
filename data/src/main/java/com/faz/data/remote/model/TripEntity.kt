@@ -18,12 +18,12 @@ sealed class TripEntity {
     data class Pilot(
         @SerializedName("name") val name: String,
         @SerializedName("avatar") val avatar: String,
-        @SerializedName("rating") val rating: Int
+        @SerializedName("rating") val rating: Float
     )
 
     data class Distance(
         @SerializedName("value") val value: String,
-        @SerializedName("unitd") val unit: String
+        @SerializedName("unit") val unit: String
     )
 
 //    data class PickUp(

@@ -10,33 +10,26 @@ import javax.inject.Inject
 class TripCache @Inject constructor(private val preferencesHelper: PreferencesHelper)
     : ICache {
 
-    override fun getTrips(): Single<TripApi.TripListResponse> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getTripsById(id: Long): Single<TripEntity.Trip> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun saveTrips(trips: TripApi.TripListResponse): Completable {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun clearTrips(): Completable {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun isCached(): Boolean {
-        //  TODO("not implemented")
-        return false
-    }
-
-    override fun setLastCacheTime(lastCache: Long) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun isExpired(): Boolean {
-        //  TODO("not implemented")
-        return true
-    }
+//    override fun getTrips(): Single<List<TripEntity.Trip>> {
+//    }
+//
+//    override fun getTripsById(id: Long): Single<TripEntity.Trip> {
+//    }
+//
+//    override fun saveTrips(trips: List<TripEntity.Trip>): Completable {
+//    }
+//
+//    override fun clearTrips(): Completable {
+//    }
+//
+//    override fun isCached(): Boolean {
+//        return false
+//    }
+//
+//    override fun setLastCacheTime(lastCache: Long) {
+//    }
+//
+//    override fun isExpired(): Boolean {
+//        return true
+//    }
 }

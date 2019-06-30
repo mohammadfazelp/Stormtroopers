@@ -16,7 +16,7 @@ sealed class TripModel {
     data class Pilot(
         val name: String,
         val avatar: String,
-        val rating: Int
+        val rating: Float
     )
 
     data class Distance(

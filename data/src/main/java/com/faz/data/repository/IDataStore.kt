@@ -7,13 +7,13 @@ import io.reactivex.Single
 
 interface IDataStore {
 
-    fun getTrips(): Single<TripApi.TripListResponse>
+    fun getTrips(): Single<List<TripEntity.Trip>>
 
     fun getTripById(id: Long): Single<TripEntity.Trip>
 
 //    fun saveTrip(id : Long) : Completable
 
-    fun saveTrips(trips: TripApi.TripListResponse): Completable
+    fun saveTrips(trips: List<TripEntity.Trip>): Completable
 
     fun clearTrips(): Completable
 }

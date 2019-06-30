@@ -14,17 +14,17 @@ interface ICache{
     /**
      * Retrieve a list of Trip, from the cache
      */
-    fun getTrips(): Single<TripApi.TripListResponse>
+//    fun getTrips(): Single<List<TripEntity.Trip>>
 
     /**
      * Retrieve a Trip, from the cache
      */
-    fun getTripsById(id : Long): Single<TripEntity.Trip>
+//    fun getTripsById(id : Long): Single<TripEntity.Trip>
 
     /**
      * Save a given list of Trip to the cache
      */
-    fun saveTrips(trips: TripApi.TripListResponse): Completable
+//    fun saveTrips(trips: List<TripEntity.Trip>): Completable
 
 //    /**
 //     * Save a given Trip to the cache
@@ -34,7 +34,7 @@ interface ICache{
     /**
      * Clear all Trips from the cache
      */
-    fun clearTrips(): Completable
+//    fun clearTrips(): Completable
 
     /**
      * Checks if an element (User) exists in the cache.
@@ -42,7 +42,7 @@ interface ICache{
      * *
      * @return true if the element is cached, otherwise false.
      */
-    fun isCached(): Boolean
+//    fun isCached(): Boolean
 
     /**
      * Checks if an element (User) exists in the cache.
@@ -51,12 +51,12 @@ interface ICache{
      * *
      * @return true if the element is cached, otherwise false.
      */
-    fun setLastCacheTime(lastCache: Long)
+//    fun setLastCacheTime(lastCache: Long)
 
     /**
      * Checks if the cache is expired.
 
      * @return true, the cache is expired, otherwise false.
      */
-    fun isExpired(): Boolean
+//    fun isExpired(): Boolean
 }

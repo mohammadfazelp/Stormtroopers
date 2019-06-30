@@ -13,7 +13,7 @@ interface IRemote {
     /**
      * Retrieve a list of Trips, from network
      */
-    fun getTrips(): Single<TripApi.TripListResponse>
+    fun getTrips(): Single<List<TripEntity.Trip>>
 
     /**
      * Retrieve a Trip, from network
