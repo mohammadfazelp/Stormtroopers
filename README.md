@@ -26,6 +26,6 @@ On peut avoir de parties : locale et api. Dans notre projet on a acces aux api. 
 <br>Picasso: comme l’outil d’image.
 <br>Des tests ont été implemente en utilisant mockito.
 <br>Constaintlayout a été utilise pour implementer correctement les UI demande.
-<br>LiveData a été implemente comme outil de connexion et entre view et viewmodel. Il "notify" la View une fois qu’il a un resultat.
+<br>LiveData a été implemente comme outil de connexion entre view et viewmodel. Il "notify" la View une fois qu’il a un resultat.
 
 
