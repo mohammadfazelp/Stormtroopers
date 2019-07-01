@@ -1,6 +1,8 @@
 package com.faz.presentation.model
 
-sealed class TripView {
+import java.io.Serializable
+
+sealed class TripView : Serializable {
 
     data class Trip(
         val id: Long,
@@ -17,12 +19,12 @@ sealed class TripView {
         val name: String,
         val avatar: String,
         val rating: Float
-    )
+    ) : Serializable
 
     data class Distance(
         val value: String,
         val unit: String
-    )
+    ) : Serializable
 
     //    data class PickUp(
 //        val name : String,
@@ -40,5 +42,5 @@ sealed class TripView {
         val name: String,
         val picture: String,
         val date: String
-    )
+    ) : Serializable
 }

@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.faz.presentation.mapper.TripMapper
 import com.faz.presentation.model.TripView
@@ -16,6 +18,14 @@ import kotlinx.android.synthetic.main.fragment_trips.*
 import javax.inject.Inject
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.faz.stormtroopers.R
+import com.faz.stormtroopers.common.extension.affectOnItemClicks
+import com.faz.stormtroopers.common.extension.replaceFragment
+import com.faz.stormtroopers.ui.MainActivity
+import com.faz.stormtroopers.ui.detail.TripDetailFragment
+import androidx.navigation.Navigation
+import androidx.navigation.NavController
+import org.jetbrains.anko.bundleOf
+
 
 class TripsFragment : DaggerFragment() {
 
@@ -42,7 +52,6 @@ class TripsFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView()
         observe(viewModel.tripsMutableLiveData, ::trips)
         observe(viewModel.networkErrorMutableLiveData, ::networkError)
         setupRecycler()
@@ -50,10 +59,12 @@ class TripsFragment : DaggerFragment() {
     }
 
     private fun networkError(s: @ParameterName(name = "t") String?) {
+        Toast.makeText(activity, s, Toast.LENGTH_SHORT).show()
     }
 
     private fun trips(list: @ParameterName(name = "t") List<TripView.Trip>?) {
         if (list != null) {
+            tripList = list
             adapter.trips = list
             adapter.notifyDataSetChanged()
         }
@@ -68,8 +79,13 @@ class TripsFragment : DaggerFragment() {
         )
         context?.resources?.getDrawable(R.drawable.divider)?.let { dividerItemDecoration.setDrawable(it) }
         rv_trips.addItemDecoration(dividerItemDecoration)
+
+        rv_trips.affectOnItemClicks { position, view ->
+            val args = Bundle()
+            args.putSerializable("trip", tripList[position])
+            val navController = Navigation.findNavController(activity!!, R.id.fragment_trips)
+            navController.navigate(R.id.navigateToTripDetailFragment, args)
+        }
     }
 
-    private fun initView() {
-    }
 }

@@ -11,8 +11,8 @@
         tools:layout="@layout/fragment_trips">
 
         <action
-            android:id="@+id/navigateToAlbumDetailFragment"
-            app:destination="@id/albumDetailFragment"
+            android:id="@+id/navigateToTripDetailFragment"
+            app:destination="@id/tripDetailFragment"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit"
             app:popEnterAnim="@anim/pop_enter"
@@ -21,12 +21,12 @@
     </fragment>
 
     <fragment
-        android:id="@+id/albumDetailFragment"
+        android:id="@+id/tripDetailFragment"
         android:name="com.faz.stormtroopers.ui.detail.TripDetailFragment"
         tools:layout="@layout/fragment_trip_detail">
 
         <argument
-            android:name="clickedAlbum"
+            android:name="clickedTrip"
             app:argType="string" />
 
     </fragment>
