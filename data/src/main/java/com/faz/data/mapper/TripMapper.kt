@@ -4,7 +4,7 @@ import com.faz.data.remote.model.TripEntity
 import com.faz.domain.model.TripModel
 import javax.inject.Inject
 
-class TripMapperData @Inject constructor() : Mapper<TripEntity.Trip, TripModel.Trip> {
+class TripMapper @Inject constructor() : Mapper<TripEntity.Trip, TripModel.Trip> {
 
     /**
      * Map a [TripEntity.Trip] instance to a [TripModel.Trip] instance

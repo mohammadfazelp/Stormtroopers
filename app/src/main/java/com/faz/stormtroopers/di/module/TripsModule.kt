@@ -4,24 +4,21 @@ import android.app.Application
 import android.content.Context
 import com.faz.data.cache.IPreferencesHelper
 import com.faz.data.cache.PreferencesHelper
-import com.faz.data.cache.TripCache
 import com.faz.data.datastore.DataStoreFactory
 import com.faz.data.executor.JobExecutor
-import com.faz.data.mapper.TripMapperData
+import com.faz.data.mapper.TripMapper
 import com.faz.data.remote.api.TripApi
 import com.faz.data.remote.api.TripApiFactory
 import com.faz.data.remote.api.TripRemote
-import com.faz.data.repository.ICache
 import com.faz.data.repository.IRemote
 import com.faz.data.repository.TripRepository
-import com.faz.domain.IRepository
+import com.faz.domain.repository.IRepository
 import com.faz.domain.executor.PostExecutionThread
 import com.faz.domain.executor.ThreadExecutor
 import com.faz.domain.usecase.GetTripsUseCase
 import com.faz.domain.usecase.IGetTripsUseCase
 import com.faz.stormtroopers.BuildConfig
 import com.faz.stormtroopers.UiThread
-import com.faz.stormtroopers.di.qualifier.ApplicationContext
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -51,7 +48,7 @@ class TripsModule {
     @Provides
     fun provideTripRepository(
         factory: DataStoreFactory,
-        mapper: TripMapperData
+        mapper: TripMapper
     ): IRepository {
         return TripRepository(factory, mapper)
     }

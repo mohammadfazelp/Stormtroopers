@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.faz.data.remote.api.TripConstants
 import com.faz.presentation.model.TripView
 import com.faz.stormtroopers.R
 import com.squareup.picasso.Picasso
@@ -34,7 +35,7 @@ class TripsAdapter @Inject constructor() : RecyclerView.Adapter<TripsAdapter.Vie
         holder.dropOffText.text = trip.drop_off.name
 
         Picasso.get()
-            .load("https://backup-star-wars.herokuapp.com" + trip.pilot.avatar)
+            .load(TripConstants.BASE_URL + trip.pilot.avatar)
             .into(holder.picImg)
 
         if (trip.pilot.rating != 0.toFloat()) holder.ratingBar?.rating = trip.pilot.rating

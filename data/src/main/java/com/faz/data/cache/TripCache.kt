@@ -1,10 +1,6 @@
 package com.faz.data.cache
 
-import com.faz.data.remote.api.TripApi
-import com.faz.data.remote.model.TripEntity
 import com.faz.data.repository.ICache
-import io.reactivex.Completable
-import io.reactivex.Single
 import javax.inject.Inject
 
 class TripCache @Inject constructor(private val preferencesHelper: PreferencesHelper)

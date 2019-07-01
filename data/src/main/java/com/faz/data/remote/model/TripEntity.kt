@@ -11,8 +11,6 @@ sealed class TripEntity {
         @SerializedName("duration") val duration: Long,
         @SerializedName("pick_up") val pick_up: Person,
         @SerializedName("drop_off") val drop_off: Person
-//        @SerializedName("pick_up") val pick_up: PickUp,
-//        @SerializedName("drop_off") val drop_off: DropOff
     ) : TripEntity()
 
     data class Pilot(
@@ -25,18 +23,6 @@ sealed class TripEntity {
         @SerializedName("value") val value: String,
         @SerializedName("unit") val unit: String
     )
-
-//    data class PickUp(
-//        @SerializedName("name") val name: String,
-//        @SerializedName("picture") val picture: String,
-//        @SerializedName("date") val date: String
-//    )
-//
-//    data class DropOff(
-//        @SerializedName("name") val name: String,
-//        @SerializedName("picture") val picture: String,
-//        @SerializedName("date") val date: String
-//    )
 
     data class Person(
         @SerializedName("name") val name: String,

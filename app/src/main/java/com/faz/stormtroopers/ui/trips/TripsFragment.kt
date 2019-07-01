@@ -46,10 +46,14 @@ class TripsFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observe(viewModel.tripsMutableLiveData, ::trips)
-        observe(viewModel.networkErrorMutableLiveData, ::networkError)
+        setUpObserver()
         setupRecycler()
         viewModel.getTrips()
+    }
+
+    private fun setUpObserver() {
+        observe(viewModel.tripsMutableLiveData, ::trips)
+        observe(viewModel.networkErrorMutableLiveData, ::networkError)
     }
 
     private fun networkError(s: @ParameterName(name = "t") String?) {
@@ -67,18 +71,25 @@ class TripsFragment : DaggerFragment() {
     private fun setupRecycler() {
         rv_trips.layoutManager = LinearLayoutManager(activity)
         rv_trips.adapter = adapter
+        addDividerToRV()
+        rv_trips.affectOnItemClicks { position, view ->
+            navigateToDetail(position)
+        }
+    }
+
+    private fun addDividerToRV() {
         val dividerItemDecoration = DividerItemDecoration(
             rv_trips.context,
             (rv_trips.layoutManager as LinearLayoutManager).orientation
         )
         context?.resources?.getDrawable(R.drawable.divider)?.let { dividerItemDecoration.setDrawable(it) }
         rv_trips.addItemDecoration(dividerItemDecoration)
+    }
 
-        rv_trips.affectOnItemClicks { position, view ->
-            val args = Bundle()
-            args.putSerializable("trip", tripList[position])
-            val navController = Navigation.findNavController(activity!!, R.id.fragment_trips)
-            navController.navigate(R.id.navigateToTripDetailFragment, args)
-        }
+    private fun navigateToDetail(position: Int) {
+        val args = Bundle()
+        args.putSerializable("trip", tripList[position])
+        val navController = Navigation.findNavController(activity!!, R.id.fragment_trips)
+        navController.navigate(R.id.navigateToTripDetailFragment, args)
     }
 }

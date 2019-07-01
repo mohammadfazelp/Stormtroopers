@@ -1,7 +1,7 @@
 package com.faz.stormtroopers.injection.component
 
 import android.app.Application
-import com.faz.domain.IRepository
+import com.faz.domain.repository.IRepository
 import com.faz.domain.executor.PostExecutionThread
 import com.faz.stormtroopers.test.TestApplication
 import com.faz.stormtroopers.di.AppComponent

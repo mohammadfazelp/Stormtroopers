@@ -1,6 +1,6 @@
 package com.faz.domain.usecase.trip
 
-import com.faz.domain.IRepository
+import com.faz.domain.repository.IRepository
 import com.faz.domain.executor.PostExecutionThread
 import com.faz.domain.executor.ThreadExecutor
 import com.faz.domain.model.TripModel

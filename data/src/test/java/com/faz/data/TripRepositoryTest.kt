@@ -3,17 +3,14 @@ package com.faz.data
 import com.faz.data.datastore.CacheDataStore
 import com.faz.data.datastore.DataStoreFactory
 import com.faz.data.datastore.RemoteDataStore
-import com.faz.data.mapper.TripMapperData
+import com.faz.data.mapper.TripMapper
 import com.faz.data.remote.model.TripEntity
 import com.faz.data.repository.IDataStore
 import com.faz.data.repository.TripRepository
-import com.faz.data.test.factory.TripFactory
 import com.faz.domain.model.TripModel
 import com.nhaarman.mockito_kotlin.*
-import io.reactivex.Completable
 import io.reactivex.Single
 import org.junit.Before
-import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
@@ -23,7 +20,7 @@ class TripRepositoryTest {
     private lateinit var tripRepository: TripRepository
 
     private lateinit var tripDataStoreFactory: DataStoreFactory
-    private lateinit var tripMapper: TripMapperData
+    private lateinit var tripMapper: TripMapper
     private lateinit var tripCacheDataStore: CacheDataStore
     private lateinit var tripRemoteDataStore: RemoteDataStore
     private lateinit var dataStore: IDataStore

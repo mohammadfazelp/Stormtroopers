@@ -1,11 +1,6 @@
 package com.faz.data.datastore
 
-import com.faz.data.remote.api.TripApi
-import com.faz.data.remote.model.TripEntity
 import com.faz.data.repository.ICache
-import com.faz.data.repository.IDataStore
-import io.reactivex.Completable
-import io.reactivex.Single
 import javax.inject.Inject
 
 open class CacheDataStore @Inject constructor(private val cache: ICache) /*:

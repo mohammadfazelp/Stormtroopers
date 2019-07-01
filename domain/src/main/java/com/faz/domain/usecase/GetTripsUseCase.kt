@@ -1,7 +1,7 @@
 package com.faz.domain.usecase
 
 import com.faz.domain.model.TripModel
-import com.faz.domain.IRepository
+import com.faz.domain.repository.IRepository
 import io.reactivex.Single
 import com.faz.domain.executor.PostExecutionThread
 import com.faz.domain.executor.ThreadExecutor
@@ -42,15 +42,3 @@ open class GetTripsUseCase @Inject constructor(
         disposables.add(disposable)
     }
 }
-
-//open class GetTripsUseCase @Inject constructor(
-//    private val repository: IRepository,
-//    threadExecutor: ThreadExecutor,
-//    postExecutionThread: PostExecutionThread
-//):
-//    SingleUseCase<List<TripModel.Trip>, Void?>(threadExecutor, postExecutionThread) {
-//
-//    public override fun buildUseCaseObservable(params: Void?): Single<List<TripModel.Trip>> {
-//        return repository.getTrips()
-//    }
-//}

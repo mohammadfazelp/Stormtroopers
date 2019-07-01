@@ -15,7 +15,6 @@ interface TripApi {
     @GET("trips/{tripId}")
     fun getTripById(@Path("tripId") id: Long): Single<TripEntity.Trip>
 
-
     class TripListResponse {
         lateinit var trips: List<TripEntity.Trip>
     }

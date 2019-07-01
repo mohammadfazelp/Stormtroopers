@@ -7,8 +7,6 @@ sealed class TripModel {
         val pilot: Pilot,
         val distance: Distance,
         val duration: Long,
-//        val pick_up: PickUp,
-//        val drop_off: DropOff
         val pick_up: Person,
         val drop_off: Person
     ) : TripModel()
@@ -23,18 +21,6 @@ sealed class TripModel {
         val value: String,
         val unit: String
     )
-
-    //    data class PickUp(
-//        val name : String,
-//        val picture : String,
-//        val date : String
-//    )
-//
-//    data class DropOff(
-//        val name : String,
-//        val picture: String,
-//        val date: String
-//    )
 
     data class Person(
         val name: String,

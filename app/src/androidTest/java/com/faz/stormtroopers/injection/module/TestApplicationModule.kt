@@ -3,12 +3,11 @@ package com.faz.stormtroopers.injection.module
 import android.app.Application
 import android.content.Context
 import com.faz.data.cache.IPreferencesHelper
-import com.faz.data.cache.PreferencesHelper
 import com.faz.data.executor.JobExecutor
 import com.faz.data.remote.api.TripApi
 import com.faz.data.repository.ICache
 import com.faz.data.repository.IRemote
-import com.faz.domain.IRepository
+import com.faz.domain.repository.IRepository
 import com.faz.domain.executor.PostExecutionThread
 import com.faz.domain.executor.ThreadExecutor
 import com.faz.stormtroopers.UiThread

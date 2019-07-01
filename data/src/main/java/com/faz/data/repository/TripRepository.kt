@@ -1,13 +1,9 @@
 package com.faz.data.repository
 
-import com.faz.data.mapper.TripMapperData
-import com.faz.data.remote.model.TripEntity
+import com.faz.data.mapper.TripMapper
 import com.faz.data.datastore.DataStoreFactory
-import com.faz.data.datastore.RemoteDataStore
-import com.faz.data.remote.api.TripApi
-import com.faz.domain.IRepository
+import com.faz.domain.repository.IRepository
 import com.faz.domain.model.TripModel
-import io.reactivex.Completable
 import io.reactivex.Single
 import javax.inject.Inject
 
@@ -17,7 +13,7 @@ import javax.inject.Inject
  */
 class TripRepository @Inject constructor(
     private val factory: DataStoreFactory,
-    private val mapper: TripMapperData
+    private val mapper: TripMapper
 ) :
     IRepository {
     override fun getTrips(): Single<List<TripModel.Trip>> {

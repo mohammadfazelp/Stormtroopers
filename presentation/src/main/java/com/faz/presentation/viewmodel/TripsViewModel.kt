@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.faz.domain.model.TripModel
 import com.faz.domain.usecase.GetTripsUseCase
+import com.faz.presentation.base.BaseViewModel
 import com.faz.presentation.mapper.TripMapper
 import com.faz.presentation.model.TripView
 import io.reactivex.disposables.CompositeDisposable
@@ -11,10 +12,9 @@ import io.reactivex.observers.DisposableSingleObserver
 import javax.inject.Inject
 
 class TripsViewModel @Inject constructor(
-//    private val getTripsUseCase: SingleUseCase<List<TripModel.Trip>, Void>,
     private val getTripsUseCase: GetTripsUseCase,
     private val tripMapper: TripMapper
-) : ViewModel() {
+) : BaseViewModel() {
 
     val tripsMutableLiveData = MutableLiveData<List<TripView.Trip>>()
     val networkErrorMutableLiveData = MutableLiveData<String>()

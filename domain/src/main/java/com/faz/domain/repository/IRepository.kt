@@ -1,4 +1,4 @@
-package com.faz.domain
+package com.faz.domain.repository
 
 import com.faz.domain.model.TripModel
 import io.reactivex.Single
