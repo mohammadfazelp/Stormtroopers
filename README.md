@@ -1,5 +1,5 @@
 # Stormtroopers
-
+<b>Le Scenario :</b> Cette application contient deux pages en totales. La premiere montre une liste d'information et la deuxieme le detail. le defi que j'ai choisi pour ce projet etait d'implementer correctement la Clean Archi+ MVVM en utilisant les elements de Jetpack au maximum.J'ai aussi implementé Rx(l'outil de Reactive Programming) au cas du besoin et Dagger2 (l'outil de Dependency Injection).<br><br>
 <b>Language:</b>
 Ce project a été implemente en kotlin. En utilisant les fonctionallités de ce language un peu partout, on profite de ses avantages (extension, data class , null safety, functional,…)
 <br><br>
