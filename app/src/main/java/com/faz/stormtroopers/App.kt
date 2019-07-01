@@ -11,25 +11,6 @@ import dagger.android.HasActivityInjector
 import dagger.android.support.DaggerApplication
 import javax.inject.Inject
 
-//class App : DaggerApplication() {
-//
-//    lateinit var context: App
-//
-//    override fun onCreate() {
-//        super.onCreate()
-//        context = this
-//    }
-//
-//    override fun attachBaseContext(base: Context) {
-//        super.attachBaseContext(base)
-//        MultiDex.install(this)
-//    }
-//
-//    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-//        return DaggerAppComponent.builder().create(this)
-//    }
-//}
-
 class App : Application(), HasActivityInjector {
 
     @Inject

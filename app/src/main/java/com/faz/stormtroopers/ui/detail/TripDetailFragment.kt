@@ -17,9 +17,6 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_trip_detail.*
-import java.text.SimpleDateFormat
-import java.text.ParseException
-import java.util.*
 
 
 class TripDetailFragment : DaggerFragment() {

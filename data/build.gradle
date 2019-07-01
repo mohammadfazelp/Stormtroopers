@@ -53,11 +53,6 @@ dependencies {
     implementation dataDependencies.retrofitGsonConverter
     implementation dataDependencies.retrofitRxJava2Adapter
     implementation dataDependencies.okhttpLogging
-    // database
-    implementation dataDependencies.room
-    kapt dataDependencies.roomCompiler
-    implementation dataDependencies.roomCommon
-    implementation dataDependencies.roomRxJava
     // other
     implementation dataDependencies.kotlin
     // android architecture component
@@ -72,7 +67,7 @@ dependencies {
     androidTestImplementation dataTestDependencies.testRunner
     testImplementation dataTestDependencies.room
     testImplementation dataTestDependencies.mockitoKotlin
-
+    testImplementation dataTestDependencies.mockitoInline
     implementation project(':domain')
 }
 repositories {

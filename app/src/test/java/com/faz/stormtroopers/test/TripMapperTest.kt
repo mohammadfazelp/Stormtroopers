@@ -20,7 +20,7 @@ class TripMapperTest {
     @Test
     fun mapToViewMapsData() {
 
-        val tripModel = TripFactory.makeTripView()
+        val tripModel = TripFactory.makeTripModel()
         val t = tripMapper.mapToView(tripModel)
 
         assertEquals(tripModel.distance.unit, t.distance.unit)

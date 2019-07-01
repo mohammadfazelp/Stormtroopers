@@ -156,6 +156,7 @@ ext {
             robolectric           : "org.robolectric:robolectric:$robolectricVersion",
             mockitoCore           : "org.mockito:mockito-core:$mockitoCoreVersion",
             daggerCompiler        : "com.google.dagger:dagger-compiler:$daggerVersion",
+            mockitoInline         : "org.mockito:mockito-inline:2.13.0",
 //            mockitoKotlin         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
             powermockModuleJunit4 : "org.powermock:powermock-module-junit4:$powermockVersion",
             powermockApiMockito   : "org.powermock:powermock-api-mockito:$powermockVersion"

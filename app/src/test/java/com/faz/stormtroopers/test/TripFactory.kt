@@ -10,7 +10,7 @@ class TripFactory {
 
     companion object Factory {
 
-        fun makeTripView(): TripModel.Trip {
+        fun makeTripModel(): TripModel.Trip {
             return TripModel.Trip(
                 randomLong(),
                 makeTripPilot(),
