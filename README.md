@@ -13,8 +13,7 @@ Le project consiste quatre packages :
 - domain(dependency : aucune)
 - data(dependency : domain)
 <br>
-La partie “app” contient tout ce qui est  “view”: Activity, Fragment, Dialog, xml ,etc.<br><br>
-
+La partie “app” contient tout ce qui est  “view”: Activity, Fragment, Dialog, xml ,etc.<br>
 Presentation contient les viewmodel. Ici nous avons just une viewmodel(TripsViewModel). Dans cette class on demande ce qu’on a besion des usecase du package domain. 
 <br>Domain : Il n’y a aucune dependency dans ce package. Ici on sait ce qu’on veut mais on ne sait pas comment!
 <br>Data : Dans ce package on sait comment implementer ce qu’on veut! On a acces au database et aux api.
