@@ -19,13 +19,13 @@ Presentation contient les viewmodel. Ici nous avons just une viewmodel(TripsView
 <br>Data : Dans ce package on sait comment implementer ce qu’on veut! On a acces au database et aux api.
 On peut avoir de parties : locale et api. Dans notre projet on a acces aux api. La partie cache a été egalement prevu mais nous n’avons pas vraiment besoin pour ce petit projet.
 <br><br><b>Outils et Libraries:</b><br>
-<br>Retrofit est la librairie de "networking". Il est utliisé pour contenir les fonctionnalités de rx.
-<br>Rx a été implementé pour faire des requetes et aussi pour convertir/filter quelques strings.
-<br>Pour "depenednecy injection" j’ai utitlisé Dagger 2.
-<br>Navigation comme outil de jetpack a été impelementé pour pouvoir naviger facilement entre les fragment.
-<br>Picasso: comme l’outil d’image.
-<br>Les tests ont été implemente en utilisant mockito.
-<br>Constaintlayout a été utilise pour implementer correctement les UI demande.
-<br>LiveData a été implemente comme outil de connexion entre view et viewmodel. Il "notify" la View une fois qu’il a un resultat.
+<br>-Retrofit est la librairie de "networking". Il est utliisé pour contenir les fonctionnalités de rx.
+<br>-Rx a été implementé pour faire des requetes et aussi pour convertir/filter quelques strings.
+<br>-Pour "depenednecy injection" j’ai utitlisé Dagger 2.
+<br>-Navigation comme outil de jetpack a été impelementé pour pouvoir naviger facilement entre les fragment.
+<br>-Picasso: comme l’outil d’image.
+<br>-Les tests ont été implemente en utilisant mockito.
+<br>-Constaintlayout a été utilise pour implementer correctement les UI demande.
+<br>-LiveData a été implemente comme outil de connexion entre view et viewmodel. Il "notify" la View une fois qu’il a un resultat.
 
 
