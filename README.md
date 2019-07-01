@@ -5,7 +5,7 @@ Ce project a été implemente en kotlin. En utilisant les fonctionallités de ce
 <br><br>
 
 <b>Arcitecture: </b>
-Le project a été implemente en clean architecture + mvvm. Les principes de SOLID a éé respecté au maximum. 
+Le project a été implemente en clean architecture + mvvm. Les principes de SOLID a été respecté au maximum. 
 <br>
 Le project consiste quatre packages : 
 - app (dependency : presentation, domain, data)
