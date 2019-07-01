@@ -19,7 +19,7 @@ Presentation contient les viewmodel. Ici nous avons just une viewmodel(TripsView
 <br>Domain : Il n’y a aucune dependency dans ce package. Ici on sait ce qu’on veut mais on ne sait pas comment!
 <br>Data : Dans ce package on sait comment implementer ce qu’on veut! On a acces au database et aux api.
 On peut avoir de parties : locale et api. Dans notre projet on a acces aux api. La partie cache a ete egalement prevu mais nous n’avons pas vraiment besoin pour ce petit projet.
-<br><br><b>Outils et Libraries:</b>
+<br><br><b>Outils et Libraries:</b><br>
 <br>Retrofit est la librairie de "networking". Il a été utliise pour contenir les fonctionnalités de rx.
 <br>Rx a été implementé pour faire des requests et aussi pour convertir/filter quelques strings.
 <br>Pour depenednecy injection j’ai utitlisé Dagger 2.
