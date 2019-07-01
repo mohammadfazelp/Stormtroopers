@@ -17,6 +17,9 @@ class DataFactory {
         fun randomLong(): Long {
             return randomInt().toLong()
         }
+        fun randomFloat(): Float {
+            return randomInt().toFloat()
+        }
 
         fun randomBoolean(): Boolean {
             return Math.random() < 0.5

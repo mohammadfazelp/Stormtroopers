@@ -1,6 +1,7 @@
 package com.faz.domain.test.factory
 
 import com.faz.domain.model.TripModel
+import com.faz.domain.test.factory.DataFactory.Factory.randomFloat
 import com.faz.domain.test.factory.DataFactory.Factory.randomInt
 import com.faz.domain.test.factory.DataFactory.Factory.randomLong
 import com.faz.domain.test.factory.DataFactory.Factory.randomUuid
@@ -32,7 +33,7 @@ class TripFactory {
         }
 
         fun makeTripModelPilot(): TripModel.Pilot {
-            return TripModel.Pilot(randomUuid(), randomUuid(), randomInt())
+            return TripModel.Pilot(randomUuid(), randomUuid(), randomFloat())
         }
 
         fun makeTripModelDistance(): TripModel.Distance {

@@ -1,5 +1,6 @@
 package com.faz.stormtroopers.test
 
+import com.faz.data.test.factory.DataFactory.Factory.randomFloat
 import com.faz.domain.model.TripModel
 import com.faz.data.test.factory.DataFactory.Factory.randomInt
 import com.faz.data.test.factory.DataFactory.Factory.randomLong
@@ -21,7 +22,7 @@ class TripFactory {
         }
 
         fun makeTripPilot(): TripModel.Pilot {
-            return TripModel.Pilot(randomUuid(), randomUuid(), randomInt())
+            return TripModel.Pilot(randomUuid(), randomUuid(), randomFloat())
         }
 
         fun makeTripDistance(): TripModel.Distance {

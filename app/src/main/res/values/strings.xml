@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Last Trips</string>
+    <string name="app_name">StormTroopers</string>
+    <string name="toolbar_title">Last Trips</string>
 
 </resources>

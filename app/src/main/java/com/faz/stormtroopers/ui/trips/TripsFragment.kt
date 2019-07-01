@@ -19,13 +19,7 @@ import javax.inject.Inject
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.faz.stormtroopers.R
 import com.faz.stormtroopers.common.extension.affectOnItemClicks
-import com.faz.stormtroopers.common.extension.replaceFragment
-import com.faz.stormtroopers.ui.MainActivity
-import com.faz.stormtroopers.ui.detail.TripDetailFragment
 import androidx.navigation.Navigation
-import androidx.navigation.NavController
-import org.jetbrains.anko.bundleOf
-
 
 class TripsFragment : DaggerFragment() {
 
@@ -87,5 +81,4 @@ class TripsFragment : DaggerFragment() {
             navController.navigate(R.id.navigateToTripDetailFragment, args)
         }
     }
-
 }

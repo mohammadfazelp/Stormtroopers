@@ -37,7 +37,7 @@ class TripApiImplTest {
         val response = TripFactory.makeTripResponse()
         stubTripServiceGetTrips(Single.just(response))
         val tripEntities = mutableListOf<TripEntity.Trip>()
-        response.trips.forEach {
+        response.forEach {
             tripEntities.add(it)
         }
 
@@ -45,7 +45,7 @@ class TripApiImplTest {
         testObserver.assertValue(tripEntities)
     }
 
-    private fun stubTripServiceGetTrips(single: Single<TripApi.TripListResponse>) {
+    private fun stubTripServiceGetTrips(single: Single<List<TripEntity.Trip>>) {
         whenever(tripApi.getTrips())
             .thenReturn(single)
     }

@@ -26,30 +26,29 @@ class TripDataStoreFactoryTest {
         cacheDataStore = mock()
         remoteDataStore = mock()
         dataStoreFactory = DataStoreFactory(
-            tripCache,
-            cacheDataStore, remoteDataStore
+            remoteDataStore
         )
     }
 
     @Test
     fun retrieveDataStoreWhenNotCachedReturnsRemoteDataStore() {
-        stubTripCacheIsCached(false)
+//        stubTripCacheIsCached(false)
         val dataStore = dataStoreFactory.retrieveDataStore()
         assert(dataStore is RemoteDataStore)
     }
 
     @Test
     fun retrieveDataStoreWhenCacheExpiredReturnsRemoteDataStore() {
-        stubTripCacheIsCached(true)
-        stubTripCacheIsExpired(true)
+//        stubTripCacheIsCached(true)
+//        stubTripCacheIsExpired(true)
         val dataStore = dataStoreFactory.retrieveDataStore()
         assert(dataStore is RemoteDataStore)
     }
 
     @Test
     fun retrieveDataStoreReturnsCacheDataStore() {
-        stubTripCacheIsCached(true)
-        stubTripCacheIsExpired(false)
+//        stubTripCacheIsCached(true)
+//        stubTripCacheIsExpired(false)
         val dataStore = dataStoreFactory.retrieveDataStore()
         assert(dataStore is CacheDataStore)
     }
@@ -60,19 +59,19 @@ class TripDataStoreFactoryTest {
         assert(dataStore is RemoteDataStore)
     }
 
-    @Test
-    fun retrieveCacheDataStoreReturnsCacheDataStore() {
-        val dataStore = dataStoreFactory.retrieveCacheDataStore()
-        assert(dataStore is CacheDataStore)
-    }
-
-    private fun stubTripCacheIsCached(isCached: Boolean) {
-        whenever(tripCache.isCached())
-            .thenReturn(isCached)
-    }
-
-    private fun stubTripCacheIsExpired(isExpired: Boolean) {
-        whenever(tripCache.isExpired())
-            .thenReturn(isExpired)
-    }
+//    @Test
+//    fun retrieveCacheDataStoreReturnsCacheDataStore() {
+//        val dataStore = dataStoreFactory.retrieveCacheDataStore()
+//        assert(dataStore is CacheDataStore)
+//    }
+//
+//    private fun stubTripCacheIsCached(isCached: Boolean) {
+//        whenever(tripCache.isCached())
+//            .thenReturn(isCached)
+//    }
+//
+//    private fun stubTripCacheIsExpired(isExpired: Boolean) {
+//        whenever(tripCache.isExpired())
+//            .thenReturn(isExpired)
+//    }
 }

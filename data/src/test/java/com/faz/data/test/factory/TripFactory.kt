@@ -2,6 +2,7 @@ package com.faz.data.test.factory
 
 import com.faz.data.remote.api.TripApi
 import com.faz.data.remote.model.TripEntity
+import com.faz.data.test.factory.DataFactory.Factory.randomFloat
 import com.faz.domain.model.TripModel
 import com.faz.data.test.factory.DataFactory.Factory.randomInt
 import com.faz.data.test.factory.DataFactory.Factory.randomLong
@@ -35,7 +36,7 @@ class TripFactory {
         }
 
         fun makeTripPilot(): TripEntity.Pilot {
-            return TripEntity.Pilot(randomUuid(), randomUuid(), randomInt())
+            return TripEntity.Pilot(randomUuid(), randomUuid(), randomFloat())
         }
 
         fun makeTripDistance(): TripEntity.Distance {
@@ -47,7 +48,7 @@ class TripFactory {
         }
 
         fun makeTripModelPilot(): TripModel.Pilot {
-            return TripModel.Pilot(randomUuid(), randomUuid(), randomInt())
+            return TripModel.Pilot(randomUuid(), randomUuid(), randomFloat())
         }
 
         fun makeTripModelDistance(): TripModel.Distance {
@@ -76,10 +77,10 @@ class TripFactory {
 
 
         //api package
-        fun makeTripResponse(): TripApi.TripListResponse {
+        fun makeTripResponse(): List<TripEntity.Trip> {
             val tripResponse = TripApi.TripListResponse()
             tripResponse.trips = makeTripApiModelList(5)
-            return tripResponse
+            return tripResponse.trips
         }
 
         fun makeTripApiModelList(count: Int): List<TripEntity.Trip> {
