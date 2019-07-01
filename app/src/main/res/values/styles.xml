@@ -10,7 +10,20 @@
 
     <style name="RatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/rating_bar_full</item>
-        <item name="android:minHeight">23dip</item>
-        <item name="android:maxHeight">25dip</item>
+        <item name="android:minHeight">18dp</item>
+        <item name="android:maxHeight">18dp</item>
+
     </style>
+
+    <style name="Rating_Bar" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">@color/yellow</item>
+    </style>
+
+    <style name="MyRatingBar" parent="Widget.AppCompat.RatingBar.Indicator">
+        <item name="android:progressDrawable">@drawable/rating_bar</item>
+        <item name="colorControlNormal">#000</item>
+        <item name="colorControlActivated">@color/yellow</item>
+    </style>
+    <color name="transparent">#80000000</color>
 </resources>
