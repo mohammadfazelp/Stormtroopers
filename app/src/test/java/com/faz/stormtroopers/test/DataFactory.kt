@@ -22,6 +22,10 @@ class DataFactory {
             return Math.random() < 0.5
         }
 
+        fun randomFloat(): Float {
+            return randomInt().toFloat()
+        }
+
         fun makeStringList(count: Int): List<String> {
             val items: MutableList<String> = mutableListOf()
             repeat(count) {
