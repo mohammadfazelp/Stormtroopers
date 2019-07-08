@@ -1,14 +1,14 @@
 package com.faz.stormtroopers
 
 import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.app.Application
-import android.content.Context
 import androidx.multidex.MultiDex
+import androidx.multidex.MultiDexApplication
 import com.faz.stormtroopers.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
-import dagger.android.support.DaggerApplication
 import javax.inject.Inject
 
 class App : Application(), HasActivityInjector {
@@ -25,7 +25,7 @@ class App : Application(), HasActivityInjector {
             .inject(this)
     }
 
-    override fun activityInjector(): AndroidInjector<Activity> {
+    override fun activityInjector(): AndroidInjector<Activity>? {
         return activityDispatchingAndroidInjector
     }
 

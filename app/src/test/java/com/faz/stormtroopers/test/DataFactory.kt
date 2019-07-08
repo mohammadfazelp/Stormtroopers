@@ -14,6 +14,7 @@ class DataFactory {
             return ThreadLocalRandom.current().nextInt(0, 1000 + 1)
         }
 
+
         fun randomLong(): Long {
             return randomInt().toLong()
         }

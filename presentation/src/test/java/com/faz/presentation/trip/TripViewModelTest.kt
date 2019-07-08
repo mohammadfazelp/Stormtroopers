@@ -1,7 +1,7 @@
 package com.faz.presentation.trip
 
 import com.faz.domain.model.TripModel
-import com.faz.domain.test.factory.TripFactory
+import com.faz.presentation.test.factory.TripFactory
 import com.faz.domain.usecase.GetTripsUseCase
 import com.faz.presentation.mapper.TripMapper
 import com.faz.presentation.viewmodel.TripsViewModel

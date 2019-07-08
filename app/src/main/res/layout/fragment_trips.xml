@@ -18,6 +18,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="20sp"
+                android:id="@+id/textViewToolbarTitle"
                 android:layout_marginLeft="16dp"
                 android:layout_gravity="center_vertical|left"
                 android:text="@string/toolbar_title"/>

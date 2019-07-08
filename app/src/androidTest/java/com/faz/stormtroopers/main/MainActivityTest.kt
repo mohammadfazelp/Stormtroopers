@@ -1,5 +1,6 @@
 package com.faz.stormtroopers.main
 
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -18,25 +19,51 @@ import io.reactivex.Single
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.junit.Before
+import com.faz.stormtroopers.ui.trips.TripsFragment
+import org.mockito.junit.MockitoJUnit.rule
+
 
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
 
     @Rule
     @JvmField
-    val activity = ActivityTestRule<MainActivity>(MainActivity::class.java, false, false)
+    val activity = ActivityTestRule(
+        MainActivity::class.java,
+        true, false
+    )
+
+    @Rule
+    fun rule() = activity
+
+    @Before
+    fun setUp() {
+        if (rule().activity != null) {
+            rule().activity.findNavController(R.id.fragment_trips)
+        }
+    }
+
+    @Test
+    fun checkTextDisplayedInToolbarInFragment() {
+//        val fragment = TripsFragment()
+//        rule().activity.supportFragmentManager.beginTransaction()
+//            .add(R.id.fragment_trips, fragment).commit()
+
+        onView(withId(R.id.textViewToolbarTitle)).check(matches(withText("Last Trips")))
+    }
 
     @Test
     fun activityLaunches() {
         stubTripRepositoryGetTrips(Single.just(TripFactory.makeTripList(2)))
-        activity.launchActivity(null)
+        rule().launchActivity(null)
     }
 
     @Test
     fun tripsDisplay() {
         val trips = TripFactory.makeTripList(1)
         stubTripRepositoryGetTrips(Single.just(trips))
-        activity.launchActivity(null)
+        rule().launchActivity(null)
 
         checkTripDetailsDisplay(trips[0], 0)
     }
@@ -45,13 +72,14 @@ class MainActivityTest {
     fun tripsAreScrollable() {
         val trips = TripFactory.makeTripList(20)
         stubTripRepositoryGetTrips(Single.just(trips))
-        activity.launchActivity(null)
+        rule().launchActivity(null)
 
         trips.forEachIndexed { index, trip ->
             onView(withId(R.id.rv_trips)).perform(
-                RecyclerViewActions.
-                scrollToPosition<RecyclerView.ViewHolder>(index))
-            checkTripDetailsDisplay(trip, index) }
+                RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(index)
+            )
+            checkTripDetailsDisplay(trip, index)
+        }
     }
 
     private fun checkTripDetailsDisplay(trip: TripModel.Trip, position: Int) {

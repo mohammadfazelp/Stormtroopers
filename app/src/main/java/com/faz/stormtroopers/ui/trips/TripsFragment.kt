@@ -28,6 +28,7 @@ class TripsFragment : DaggerFragment() {
 
     @Inject
     lateinit var adapter: TripsAdapter
+
     @Inject
     lateinit var mapper: TripMapper
 

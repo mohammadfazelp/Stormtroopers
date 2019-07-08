@@ -1,9 +1,9 @@
-package com.faz.domain.test.factory
+package com.faz.presentation.test.factory
 
 import com.faz.domain.model.TripModel
-import com.faz.domain.test.factory.DataFactory.Factory.randomInt
-import com.faz.domain.test.factory.DataFactory.Factory.randomLong
-import com.faz.domain.test.factory.DataFactory.Factory.randomUuid
+import com.faz.presentation.test.factory.DataFactory.Factory.randomFloat
+import com.faz.presentation.test.factory.DataFactory.Factory.randomLong
+import com.faz.presentation.test.factory.DataFactory.Factory.randomUuid
 
 /**
  * Factory class for Trip related instances
@@ -32,7 +32,7 @@ class TripFactory {
         }
 
         fun makeTripModelPilot(): TripModel.Pilot {
-            return TripModel.Pilot(randomUuid(), randomUuid(), randomInt())
+            return TripModel.Pilot(randomUuid(), randomUuid(), randomFloat())
         }
 
         fun makeTripModelDistance(): TripModel.Distance {

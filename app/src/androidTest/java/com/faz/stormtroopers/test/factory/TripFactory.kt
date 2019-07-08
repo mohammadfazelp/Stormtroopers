@@ -31,7 +31,7 @@ class TripFactory {
             return TripModel.Pilot(
                 DataFactory.randomUuid(),
                 DataFactory.randomUuid(),
-                DataFactory.randomInt()
+                DataFactory.randomFloat()
             )
         }
 

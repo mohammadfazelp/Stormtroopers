@@ -1,4 +1,4 @@
-package com.faz.domain.test.factory
+package com.faz.presentation.test.factory
 
 import java.util.concurrent.ThreadLocalRandom
 
@@ -15,6 +15,10 @@ class DataFactory {
 
         fun randomInt(): Int {
             return ThreadLocalRandom.current().nextInt(0, 1000 + 1)
+        }
+
+        fun randomFloat(): Float {
+            return randomInt().toFloat()
         }
 
         fun randomLong(): Long {

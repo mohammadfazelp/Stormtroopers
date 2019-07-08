@@ -16,6 +16,8 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         testInstrumentationRunner rootProject.ext.testInstrumentationRunner
+//        testInstrumentationRunner 'com.faz.stormtroopers.test.TestRunner'
+
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -37,6 +39,7 @@ android {
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
+        incremental = false
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -44,7 +47,16 @@ android {
         test.java.srcDirs += 'src/test/kotlin'
     }
 }
-
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '28.0.0'
+            }
+        }
+    }
+}
 dependencies {
     def appDependencies = rootProject.ext.appDependencies
     def appTestDependencies = rootProject.ext.appTestDependencies
@@ -105,20 +117,27 @@ dependencies {
     androidTestImplementation appTestDependencies.espressoIntents
     implementation appTestDependencies.espressoIdlingResource
     androidTestImplementation appTestDependencies.supportAnnotations
-    testImplementation appTestDependencies.robolectric
+//    testImplementation appTestDependencies.robolectric
     testImplementation appTestDependencies.mockitoCore
-    testAnnotationProcessor appTestDependencies.daggerCompiler
+    kaptTest appTestDependencies.daggerCompiler
     androidTestAnnotationProcessor appTestDependencies.daggerCompiler
-    testImplementation appTestDependencies.mockitoKotlin
+//    testImplementation appTestDependencies.mockitoKotlin
+    androidTestImplementation("com.nhaarman:mockito-kotlin-kt1.1:1.5.0", {
+        exclude group: 'org.mockito', module: 'mockito-core'
+    })
+    androidTestImplementation appTestDependencies.mockitoAndroid
     testImplementation appTestDependencies.powermockModuleJunit4
     testImplementation appTestDependencies.powermockApiMockito
     testImplementation appTestDependencies.kotlinJUnit
+    kaptAndroidTest appTestDependencies.daggerCompiler
+    kaptTest appTestDependencies.daggerCompiler
+    androidTestImplementation appTestDependencies.junit
+    androidTestImplementation appTestDependencies.mockito
+    androidTestImplementation appTestDependencies.mockitoAndroid
 
     implementation "org.jetbrains.kotlin:kotlin-reflect:1.3.40"
 
     implementation project(':presentation')
     implementation project(':data')
     implementation project(':domain')
-
-
 }

@@ -30,6 +30,10 @@ class DataFactory {
             return items
         }
 
+        fun randomFloat(): Float {
+            return randomInt().toFloat()
+        }
+
     }
 
 }
