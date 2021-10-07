@@ -83,6 +83,8 @@ class TripsFragment : DaggerFragment() {
             rv_trips.context,
             (rv_trips.layoutManager as LinearLayoutManager).orientation
         )
+
+        //fixme
         context?.resources?.getDrawable(R.drawable.divider)?.let { dividerItemDecoration.setDrawable(it) }
         rv_trips.addItemDecoration(dividerItemDecoration)
     }
