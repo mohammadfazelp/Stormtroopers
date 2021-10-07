@@ -16,7 +16,6 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         testInstrumentationRunner rootProject.ext.testInstrumentationRunner
-//        testInstrumentationRunner 'com.faz.stormtroopers.test.TestRunner'
 
         vectorDrawables.useSupportLibrary = true
     }
@@ -97,8 +96,6 @@ dependencies {
     implementation appDependencies.picasso
     implementation appDependencies.navigationFragment
     implementation appDependencies.navigationUi
-    //implementation appDependencies.paginate
-    //kapt "com.android.databinding:compiler:3.1.4"
     //other
     implementation appDependencies.multidex
     implementation appDependencies.kotlin
@@ -117,11 +114,9 @@ dependencies {
     androidTestImplementation appTestDependencies.espressoIntents
     implementation appTestDependencies.espressoIdlingResource
     androidTestImplementation appTestDependencies.supportAnnotations
-//    testImplementation appTestDependencies.robolectric
     testImplementation appTestDependencies.mockitoCore
     kaptTest appTestDependencies.daggerCompiler
     androidTestAnnotationProcessor appTestDependencies.daggerCompiler
-//    testImplementation appTestDependencies.mockitoKotlin
     androidTestImplementation("com.nhaarman:mockito-kotlin-kt1.1:1.5.0", {
         exclude group: 'org.mockito', module: 'mockito-core'
     })
